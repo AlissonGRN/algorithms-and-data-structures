@@ -61,4 +61,18 @@ def simulatedAnnealing(cities, initialTemperature = 1000, coolingRate=0.003, num
 
     return bestTour, bestCost
 
+# Example usage
 
+if __name__ == "__main__":
+    #Example citie (coordinates)
+    cities = [
+    (0, 0), (1, 4), (3, 2), (5, 6), (7, 3),
+    (2, 8), (9, 5), (4, 7), (6, 1), (8, 9),
+    (10, 12), (11, 14), (13, 15), (15, 11), (17, 13),
+    (12, 18), (19, 16), (14, 20), (16, 10), (18, 19)
+    ]
+
+    bestTour, bestCost = simulatedAnnealing(cities)
+
+    print(f"Best tour: {bestTour}")
+    print(f"Best cost: {bestCost}")
