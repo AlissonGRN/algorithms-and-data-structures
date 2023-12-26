@@ -55,6 +55,10 @@ def simulatedAnnealing(cities, initialTemperature = 1000, coolingRate=0.003, num
         # cool down the temperature
         temperature *= 1 - coolingRate
 
+        # print iteration and cost information every 100 itetations
+        if i % 100 == 0:
+            print(f"Iteration {i}: Best Cost = {bestCost}")
+
     return bestTour, bestCost
 
 
