@@ -37,13 +37,13 @@ def simulatedAnnealing(cities, initialTemperature = 1000, coolingRate=0.003, num
         # generate a new tour by swapping two random cities
         newTour = currentTour.copy()
         idx1, idx2 = random.sample(range(numCities), 2)
-        newTour[idx1], newTour[idx2] = newTour[idx2, idx1]
+        newTour[idx1], newTour[idx2] = newTour[idx2], newTour[idx1]
 
         # calculate the cost of the new tour
         newCost = totalDistance(newTour, cities)
 
         # decide wether to accept the new tour
-        if newCost < currentCost or random.random < math.exp((currentCost - newCost) / temperature):
+        if newCost < currentCost or random.random() < math.exp((currentCost - newCost) / temperature):
             currentTour = newTour
             currentCost = newCost
 
