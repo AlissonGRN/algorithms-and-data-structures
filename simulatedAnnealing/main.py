@@ -25,6 +25,7 @@ def totalDistance(tour, cities):
 def simulatedAnnealing(cities, initialTemperature = 1000, coolingRate=0.003, numIterations=10000):
     '''Simulated Annealing algorithm'''
     
+    
     numCities = len(cities)
     currentTour = random.sample(range(numCities), numCities) # initial random tour
     currentCost = totalDistance(currentTour, cities)
